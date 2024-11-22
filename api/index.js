@@ -12,12 +12,6 @@ app.use(express.json());
 //mounting api routes
 app.use("/api/v1",router)
 
-app.get("/", (req, res)=>{
-  res.json({
-    success: true,
-    message: "Server Running Successfully"
-  })
-})
 
 dotenv.config();
 
@@ -28,3 +22,6 @@ dbConnect();
 app.listen(PORT, () => {
   console.log("Server is running at port:", PORT);
 });
+
+app.get("/",(req,res)=>
+  {res.send("Successful");})
